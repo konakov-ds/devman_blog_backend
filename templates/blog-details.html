@@ -73,11 +73,11 @@
                   <p>{{ post.published_at }}</p>
                   <p>{{ post.text }}</p>
 <!--                <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>-->
-              </div>
+                </div>
                 <br>
-                <br>
+                <div>
                 <ul class="thumb-info">
-                  <li><a href="#"><i class="ti-heart"></i>{{ post.likes_amount }}</a></li>
+                  <li><a href="#"><i class="ti-heart" style="color:red"></i>{{ post.likes_amount }}</a></li>
                   <li><a href="#"><i class="ti-themify-favicon"></i>{{ post.comments | length }} Comments</a></li>
                   <li></li>
                   <li></li>
@@ -89,6 +89,10 @@
                   <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
                   <li><a href="#"><i class="ti-instagram"></i></a></li>
                 </ul>
+                </div>
+                <br>
+              </div>
+              <div>
                 <h3>{{ post.comments | length }} Comments</h3>
                 <br>
                 {% for comment in post.comments %}
