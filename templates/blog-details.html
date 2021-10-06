@@ -67,21 +67,38 @@
                 {% else %}
                   <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="">
                 {% endif %}
-                <ul class="thumb-info">
-                  <li><a href="#"><i class="ti-user"></i>{{ post.author }}</a></li>
-                  <li><a href="#"><i class="ti-notepad"></i>{{ post.published_at }}</a></li>
-                  <li><a href="#"><i class="ti-themify-favicon"></i>{{ post.comments_amount }} Comments</a></li>
-                </ul>
-              </div>
-              <div class="details mt-20">
-                <h3>{{ post.title }}</h3>
-                <p>{{ post.text }}</p>
+                <div class="details mt-20">
+                  <h3>{{ post.title }}</h3>
+                  <h5>{{ post.author }}</h5>
+                  <p>{{ post.published_at }}</p>
+                  <p>{{ post.text }}</p>
 <!--                <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>-->
               </div>
+                <br>
+                <br>
+                <ul class="thumb-info">
+                  <li><a href="#"><i class="ti-heart"></i>{{ post.likes_amount }}</a></li>
+                  <li><a href="#"><i class="ti-themify-favicon"></i>{{ post.comments | length }} Comments</a></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li><a href="#"><i class="ti-facebook"></i></a></li>
+                  <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                  <li><a href="#"><i class="ti-instagram"></i></a></li>
+                </ul>
+                <h3>{{ post.comments | length }} Comments</h3>
+                <br>
+                {% for comment in post.comments %}
+                  <p><strong>{{comment.author}}</strong></p>
+                  <p>{{comment.published_at}}</p>
+                  <p>{{comment.text}}</p>
+                  <br>
+                {% endfor %}
+              </div>
             </div>
-
-
-
           </div>
 
           <!-- Start Blog Post Siddebar -->
