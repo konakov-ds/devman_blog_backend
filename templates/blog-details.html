@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %}
+  <title>{{ post.title }} - Blog Details</title>
+{% endblock %}
 {% block banner_start %}
   <h1>{{post.title}}</h1>
   <h4>Home - {{post.title}}</h4>
