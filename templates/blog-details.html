@@ -11,9 +11,9 @@
   <div class="single-recent-blog-post">
     <div class="thumb">
       {% if post.image_url %}
-        <img class="img-fluid" src="{{ post.image_url }}" alt="">
+        <img class="img-fluid" src="{{ post.image_url }}" alt="{{ post.title }}">
       {% else %}
-        <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="">
+        <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="blog_img">
       {% endif %}
       <div class="details mt-20">
         <h3>{{ post.title }}</h3>
