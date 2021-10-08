@@ -5,7 +5,7 @@
 {% endblock %}
 {% block banner_start %}
   <h1>{{post.title}}</h1>
-  <h4>Home - {{post.title}}</h4>
+  <h4><a class="nav-link" style="color:white" href="{% url 'index' %}">Home</a>{{post.title}}</h4>
 {% endblock %}
 {% block content %}
   <div class="single-recent-blog-post">
